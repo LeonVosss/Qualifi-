@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merci — Votre demande est confirmée</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!--
+═══════════════════════════════════════════════════════
+PIXEL GOOGLE ADS — LEAD QUALIFIÉ
+═══════════════════════════════════════════════════════
+ÉTAPES POUR ACTIVER :
+
+1. Dans Google Ads → Outils → Suivi des conversions
+2. Clique "+" → Créer une action de conversion
+3. Choisis "Site Web"
+4. Nom : "Lead Qualifié Solaire"
+5. Catégorie : "Lead"
+6. Google te génère un code avec :
+   - Un ID de conversion : AW-XXXXXXXXX
+   - Un libellé de conversion : XXXXXXXXXXXXXXXXXXX
+7. Remplace les valeurs ci-dessous et décommente
+
+→ Ce pixel se déclenche UNIQUEMENT sur cette page
+→ Google apprend à cibler des gens comme ce lead
+→ Votre coût par lead baisse avec le temps
+═══════════════════════════════════════════════════════
+-->
+
+<!-- DÉCOMMENTE ET REMPLACE PAR TES VALEURS :
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-XXXXXXXXX');
+  gtag('event', 'conversion', {
+    'send_to': 'AW-XXXXXXXXX/XXXXXXXXXXXXXXXXXXX',
+    'value': 1.0,
+    'currency': 'EUR'
+  });
+</script>
+-->
+
+<style>
+  :root {
+    --black: #080808;
+    --white: #F5F3EE;
+    --blue: #1A56DB;
+    --blue-light: #3B72F0;
+    --green: #22C55E;
+    --green-dim: rgba(34,197,94,0.1);
+    --green-border: rgba(34,197,94,0.2);
+    --gray: #8C8C8C;
+    --border: rgba(245,243,238,0.08);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { min-height: 100%; background: var(--black); color: var(--white); font-family: 'DM Sans', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
+
+  body::before {
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 0; opacity: 0.4;
+  }
+  body::after {
+    content: ''; position: fixed; top: -30%; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(34,197,94,0.06) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+  }
+
+  .logo { position: fixed; top: 28px; left: 40px; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: 0.12em; color: var(--white); opacity: 0.9; z-index: 10; }
+
+  .wrapper { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px 60px; }
+
+  .container { width: 100%; max-width: 520px; animation: fadeUp 0.6s cubic-bezier(0.4,0,0.2,1) forwards; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* SUCCESS ICON */
+  .success-ring {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: var(--green-dim); border: 1px solid var(--green-border);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 28px; position: relative;
+    animation: ringPulse 2s ease-out forwards;
+  }
+
+  .success-ring::before {
+    content: ''; position: absolute; inset: -8px; border-radius: 50%;
+    border: 1px solid var(--green-border); opacity: 0;
+    animation: ripple 2s ease-out 0.3s forwards;
+  }
+
+  @keyframes ringPulse { 0%{transform:scale(0.8);opacity:0} 60%{transform:scale(1.05)} 100%{transform:scale(1);opacity:1} }
+  @keyframes ripple { 0%{inset:-8px;opacity:0.6} 100%{inset:-24px;opacity:0} }
+
+  .check-icon { font-size: 32px; animation: checkPop 0.4s cubic-bezier(0.175,0.885,0.32,1.275) 0.3s both; }
+  @keyframes checkPop { from{transform:scale(0);opacity:0} to{transform:scale(1);opacity:1} }
+
+  /* TITLE */
+  .title { font-family: 'Syne', sans-serif; font-size: clamp(28px,5vw,42px); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 14px; }
+  .title span { color: var(--green); }
+  .subtitle { font-size: 15px; color: var(--gray); line-height: 1.75; margin-bottom: 36px; max-width: 420px; }
+
+  /* PROMISE BOX */
+  .promise { background: var(--green-dim); border: 1px solid var(--green-border); border-radius: 14px; padding: 20px 24px; margin-bottom: 28px; display: flex; align-items: center; gap: 16px; }
+  .promise-icon { font-size: 22px; flex-shrink: 0; }
+  .promise-text { font-size: 14px; color: var(--white); line-height: 1.55; font-weight: 400; }
+  .promise-text strong { font-weight: 600; color: var(--green); }
+
+  /* STEPS */
+  .steps-title { font-size: 11px; font-weight: 500; color: var(--gray); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
+  .steps { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+  .step { display: flex; align-items: flex-start; gap: 14px; padding: 16px 18px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 11px; }
+  .step-num { width: 26px; height: 26px; border-radius: 50%; background: rgba(26,86,219,0.15); border: 1px solid rgba(26,86,219,0.25); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #7BA7F7; flex-shrink: 0; font-family: 'Syne', sans-serif; }
+  .step-content { font-size: 14px; color: var(--gray); line-height: 1.55; }
+  .step-content strong { color: var(--white); font-weight: 500; display: block; margin-bottom: 2px; font-size: 14px; }
+
+  /* DIVIDER */
+  .divider { height: 1px; background: var(--border); margin: 24px 0; }
+
+  /* TIPS */
+  .tips-title { font-size: 11px; font-weight: 500; color: var(--gray); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
+  .tips { display: flex; flex-direction: column; gap: 8px; }
+  .tip { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(255,255,255,0.015); border: 1px solid var(--border); border-radius: 9px; font-size: 13px; color: var(--gray); line-height: 1.4; }
+  .tip-icon { font-size: 15px; flex-shrink: 0; }
+
+  /* FOOTER */
+  .footer { margin-top: 40px; text-align: center; font-size: 12px; color: rgba(140,140,140,0.35); }
+
+  @media(max-width:600px) { .logo{left:20px;top:20px} .wrapper{padding:70px 20px 40px} }
+</style>
+</head>
+<body>
+<div class="logo">KAIRO</div>
+<div class="wrapper">
+  <div class="container">
+
+    <div class="success-ring"><span class="check-icon">✓</span></div>
+
+    <h1 class="title">Demande reçue.<br><span>Un installateur vous rappelle.</span></h1>
+    <p class="subtitle">Votre projet a bien été transmis à un installateur certifié RGE dans votre zone. Vous serez contacté sous 24 heures.</p>
+
+    <div class="promise">
+      <span class="promise-icon">📞</span>
+      <p class="promise-text"><strong>Rappel garanti sous 24h</strong> Un expert solaire de votre secteur va vous appeler pour discuter de votre projet et vous préparer une estimation gratuite.</p>
+    </div>
+
+    <p class="steps-title">Prochaines étapes</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content"><strong>Préparez votre dernière facture EDF</strong>Le montant annuel en kWh permettra d'estimer précisément votre production et vos économies.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content"><strong>Repérez l'orientation de votre toit</strong>Un toit orienté sud ou sud-ouest offre le meilleur rendement. Notez si des arbres ou bâtiments l'ombragent.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content"><strong>Renseignez-vous sur MaPrimeRénov'</strong>Des aides de l'État peuvent couvrir une partie de l'installation. L'installateur vous guidera sur votre éligibilité.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="tips-title">Bon à savoir avant le rendez-vous</p>
+    <div class="tips">
+      <div class="tip"><span class="tip-icon">⚡</span>Le retour sur investissement moyen d'une installation est de 8 à 10 ans en France.</div>
+      <div class="tip"><span class="tip-icon">🌤️</span>Même par temps nuageux, les panneaux produisent de l'électricité.</div>
+      <div class="tip"><span class="tip-icon">🏠</span>La valeur de votre bien immobilier augmente avec une installation solaire.</div>
+    </div>
+
+    <p class="footer">Kairo × Inovagreen — Vos données ne sont jamais revendues</p>
+  </div>
+</div>
+</body>
+</html>
